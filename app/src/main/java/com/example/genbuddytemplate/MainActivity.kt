@@ -18,7 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import com.example.genbuddytemplate.screens.OnboardingScreen
 import com.example.genbuddytemplate.screens.LoginScreen
-import com.example.genbuddytemplate.screens.MainChatScreen
+import com.example.genbuddytemplate.screens.MainContainer
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ fun MyApp() {
     when (currentScreen) {
         Screen.Onboarding -> OnboardingScreen(onNavigate = { currentScreen = it })
         Screen.Login -> LoginScreen(onNavigate = { currentScreen = it })
-        Screen.MainChat -> MainChatScreen(onNavigate = { currentScreen = it })
+        Screen.MainChat -> MainContainer(onNavigate = { currentScreen = it })
     }
 }
 
