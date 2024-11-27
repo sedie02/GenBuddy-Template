@@ -46,7 +46,7 @@ fun DrawerContent(onNavigate: (Screen) -> Unit) {
             Spacer(modifier = Modifier.width(16.dp))
             Column {
                 Text(
-                    text = "Username", // Replace with dynamic username in the future
+                    text = "Sedie-Man", // Replace with dynamic username in the future
                     color = Color.White,
                     fontSize = 18.sp
                 )
@@ -62,7 +62,7 @@ fun DrawerContent(onNavigate: (Screen) -> Unit) {
         MenuItem(
             icon = Icons.Default.Star,
             label = "Chat",
-            onClick = { onNavigate(Screen.MainChat) }
+            onClick = { onNavigate(Screen.Chat) }
         )
         MenuItem(
             icon = Icons.Default.Star,
@@ -77,7 +77,7 @@ fun DrawerContent(onNavigate: (Screen) -> Unit) {
         MenuItem(
             icon = Icons.Default.Person,
             label = "Avatar",
-            onClick = { /* Placeholder for future navigation */ }
+            onClick = { onNavigate(Screen.Avatar) }
         )
         MenuItem(
             icon = Icons.Default.Person,
