@@ -140,7 +140,7 @@ fun LoginScreen(onNavigate: (Screen) -> Unit) {
 
 // Login Button
             Button(
-                onClick = { /* Handle login */ },
+                onClick = { onNavigate(Screen.MainChat) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(48.dp),
