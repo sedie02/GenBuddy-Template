@@ -18,7 +18,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import com.example.genbuddytemplate.screens.OnboardingScreen
 import com.example.genbuddytemplate.screens.LoginScreen
-import com.example.genbuddytemplate.screens.MainChatScreen
+import com.example.genbuddytemplate.screens.MainContainer
+import com.example.genbuddytemplate.screens.mainassets.AvatarScreen
+import com.example.genbuddytemplate.screens.mainassets.ChatScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,11 +39,13 @@ fun MyApp() {
     when (currentScreen) {
         Screen.Onboarding -> OnboardingScreen(onNavigate = { currentScreen = it })
         Screen.Login -> LoginScreen(onNavigate = { currentScreen = it })
-        Screen.MainChat -> MainChatScreen(onNavigate = { currentScreen = it })
+        Screen.MainChat -> MainContainer(onNavigate = { currentScreen = it })
+        Screen.Avatar -> AvatarScreen ( onNavigate = { currentScreen = it })
+        Screen.Chat -> ChatScreen ( onNavigate = { currentScreen = it })
     }
 }
 
 // Enum class to define screens
 enum class Screen {
-    Onboarding, Login, MainChat
+    Onboarding, Login, MainChat, Avatar, Chat
 }
