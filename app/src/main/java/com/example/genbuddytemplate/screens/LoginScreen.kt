@@ -20,7 +20,6 @@ import com.example.genbuddytemplate.Screen
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.RoundedCornerShape
 
-
 @Composable
 fun LoginScreen(onNavigate: (Screen) -> Unit) {
     var email by remember { mutableStateOf("") }
@@ -138,7 +137,7 @@ fun LoginScreen(onNavigate: (Screen) -> Unit) {
             }
             Spacer(modifier = Modifier.height(16.dp))
 
-// Login Button
+            // Login Button
             Button(
                 onClick = { /* Handle login */ },
                 modifier = Modifier
@@ -154,7 +153,7 @@ fun LoginScreen(onNavigate: (Screen) -> Unit) {
             }
             Spacer(modifier = Modifier.height(32.dp)) // Vergrote ruimte tussen knop en "OR"
 
-// OR Divider
+            // OR Divider
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
@@ -165,17 +164,22 @@ fun LoginScreen(onNavigate: (Screen) -> Unit) {
             }
             Spacer(modifier = Modifier.height(32.dp)) // Vergrote ruimte tussen "OR" en social buttons
 
-// Social Login Options
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly
-            ) {
-                SocialLoginButton(text = "G")
-                SocialLoginButton(text = "W")
+            // Social Login Button
+            @Composable
+            fun SocialLoginButton(text: String) {
+                Box(
+                    modifier = Modifier
+                        .size(48.dp)
+                        .background(Color(0xFF384757), shape = MaterialTheme.shapes.small), // rgb(56, 71, 87)
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(text = text, color = Color.White, fontSize = 18.sp)
+                }
             }
+
             Spacer(modifier = Modifier.height(64.dp)) // Extra ruimte tussen social buttons en "Sign Up"
 
-// Sign Up Text
+            // Sign Up Text
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center // Horizontaal centreren
@@ -186,29 +190,9 @@ fun LoginScreen(onNavigate: (Screen) -> Unit) {
                     text = "Sign Up",
                     color = Color(0xFF3C7DFE),
                     fontSize = 12.sp,
-                    modifier = Modifier.clickable { /* Navigate to sign-up */ }
+                    modifier = Modifier.clickable { onNavigate(Screen.Register) } // Navigatie naar RegisterScreen
                 )
             }
-
         }
     }
-}
-
-// Social Login Button
-@Composable
-fun SocialLoginButton(text: String) {
-    Box(
-        modifier = Modifier
-            .size(48.dp)
-            .background(Color(0xFF384757), shape = MaterialTheme.shapes.small), // rgb(56, 71, 87)
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = text, color = Color.White, fontSize = 18.sp)
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewLoginScreen() {
-    LoginScreen(onNavigate = {})
 }

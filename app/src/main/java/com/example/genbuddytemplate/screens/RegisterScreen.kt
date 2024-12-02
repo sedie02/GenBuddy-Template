@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.clickable
 import com.example.genbuddytemplate.Screen
 
+
 @Composable
 fun RegisterScreen(onNavigate: (Screen) -> Unit) {
     var fullname by remember { mutableStateOf("") }
@@ -168,14 +169,14 @@ fun RegisterScreen(onNavigate: (Screen) -> Unit) {
             Spacer(modifier = Modifier.height(32.dp))
 
             // OR Divider
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Divider(color = Color.Gray, modifier = Modifier.weight(1f))
-                Text(text = "  or  ", color = Color.White)
-                Divider(color = Color.Gray, modifier = Modifier.weight(1f))
-            }
+            //Row(
+            //    modifier = Modifier.fillMaxWidth(),
+            //    verticalAlignment = Alignment.CenterVertically
+            //) {
+            //    Divider(color = Color.Gray, modifier = Modifier.weight(1f))
+            //    Text(text = "  or  ", color = Color.White)
+            //    Divider(color = Color.Gray, modifier = Modifier.weight(1f))
+            //}
             Spacer(modifier = Modifier.height(32.dp))
 
             // Social Login Options
@@ -183,8 +184,8 @@ fun RegisterScreen(onNavigate: (Screen) -> Unit) {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                SocialLoginButton(text = "G")
-                SocialLoginButton(text = "W")
+            //    SocialLoginButton(text = "G")
+            //    SocialLoginButton(text = "W")
             }
             Spacer(modifier = Modifier.height(32.dp))
         }
