@@ -16,6 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.genbuddytemplate.screens.mainassets.AvatarScreen
 import com.example.genbuddytemplate.screens.mainassets.ChatScreen
+import io.ktor.client.*
+import io.ktor.client.engine.cio.CIO
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.serialization.kotlinx.json.json
+import kotlinx.serialization.json.Json
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -81,4 +86,12 @@ fun MainContainer(onNavigate: (Screen) -> Unit) {
 @Composable
 fun PreviewMainContainer() {
     MainContainer(onNavigate = {})
+}
+
+object HttpClientProvider {
+    val httpClient: HttpClient = HttpClient(CIO) {
+        install(ContentNegotiation) {
+            json(Json { ignoreUnknownKeys = true })
+        }
+    }
 }
