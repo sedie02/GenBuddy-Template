@@ -1,9 +1,9 @@
 package com.example.genbuddytemplate
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -14,10 +14,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.genbuddytemplate.ui.theme.GenBuddyTemplateTheme
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import com.example.genbuddytemplate.screens.OnboardingScreen
 import com.example.genbuddytemplate.screens.LoginScreen
+import com.example.genbuddytemplate.screens.MainChatScreen
+import com.example.genbuddytemplate.screens.RegisterScreen
 import com.example.genbuddytemplate.screens.MainContainer
 import com.example.genbuddytemplate.screens.mainassets.AvatarScreen
 import com.example.genbuddytemplate.screens.mainassets.ChatScreen
@@ -47,5 +47,5 @@ fun MyApp() {
 
 // Enum class to define screens
 enum class Screen {
-    Onboarding, Login, MainChat, Avatar, Chat
+    Onboarding, Login, MainChat, Avatar, Chat, Register
 }
