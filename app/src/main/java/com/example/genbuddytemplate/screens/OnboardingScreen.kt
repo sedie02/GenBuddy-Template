@@ -113,7 +113,7 @@ fun OnboardingScreen(onNavigate: (Screen) -> Unit) {
         currentPhaseIndex--
     }
 
-    // Root Layout
+    //Root Layout
     Box(
         modifier = Modifier
             .fillMaxSize()
