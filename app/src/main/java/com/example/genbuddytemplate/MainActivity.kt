@@ -3,6 +3,7 @@ package com.example.genbuddytemplate
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.*
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,7 +17,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.genbuddytemplate.ui.theme.GenBuddyTemplateTheme
 import com.example.genbuddytemplate.screens.OnboardingScreen
 import com.example.genbuddytemplate.screens.LoginScreen
-import com.example.genbuddytemplate.screens.MainChatScreen
 import com.example.genbuddytemplate.screens.RegisterScreen
 import com.example.genbuddytemplate.screens.MainContainer
 import com.example.genbuddytemplate.screens.mainassets.AvatarScreen
@@ -43,6 +43,7 @@ fun MyApp() {
         Screen.MainChat -> MainContainer(onNavigate = { currentScreen = it })
         Screen.Avatar -> AvatarScreen ( onNavigate = { currentScreen = it })
         Screen.Chat -> ChatScreen ( onNavigate = { currentScreen = it })
+        Screen.Register -> RegisterScreen(onNavigate = { currentScreen = it })
     }
 }
 
